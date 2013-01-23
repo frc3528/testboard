@@ -1,4 +1,4 @@
-package edu.wpi.first.wpilibj.templates;
+package com.teamupnext.robot;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -25,5 +25,7 @@ public class RobotMap {
     //End Joystick Constants
     
     public static final int ShooterChannel = 7;
+    
+    public static final int FEEDER_TIMEOUT = 3;
     
 }

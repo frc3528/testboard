@@ -1,9 +1,13 @@
 
-package edu.wpi.first.wpilibj.templates;
+package com.teamupnext.robot;
 
+import com.teamupnext.robot.commands.TurnOffShooter;
+import com.teamupnext.robot.commands.PushFeeder;
+import com.teamupnext.robot.commands.PowerDownShooter;
+import com.teamupnext.robot.commands.PullFeeder;
+import com.teamupnext.robot.commands.PowerUpShooter;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
-import edu.wpi.first.wpilibj.templates.commands.*;
 ;
 
 /**
@@ -17,16 +21,33 @@ public class OI {
     private JoystickButton decreaseShooterPower;
     private JoystickButton stopShooter;
     
+    private JoystickButton pushFeeder;
+    private JoystickButton pullFeeder;
+    
     public OI()
     {
         joystick = new Joystick(RobotMap.JOYSTICK_PORT);
+        
+        //shooter 
         increaseShooterPower = new JoystickButton(joystick, RobotMap.RIGHT_BUMPER);
         decreaseShooterPower = new JoystickButton(joystick, RobotMap.LEFT_BUMPER);
         stopShooter = new JoystickButton(joystick, RobotMap.X_BUTTON);
         
         increaseShooterPower.whenPressed(new PowerUpShooter());
         decreaseShooterPower.whenPressed(new PowerDownShooter());
-        stopShooter.whenPressed(new TurnOffShooter());
+        stopShooter.whenPressed(new TurnOffShooter());        
+        
+        
+        
+        //feeder
+        pushFeeder = new JoystickButton(joystick, RobotMap.A_BUTTON);
+        pullFeeder = new JoystickButton(joystick, RobotMap.B_BUTTON);
+        
+        pushFeeder.whenPressed(new PushFeeder());
+        pullFeeder.whenPressed(new PullFeeder());   
+        
+        
+        
     }
     
     

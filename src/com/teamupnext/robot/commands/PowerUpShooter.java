@@ -2,15 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.wpi.first.wpilibj.templates.commands;
+package com.teamupnext.robot.commands;
 
 /**
  *
  * @author jousley
  */
-public class TurnOffShooter extends CommandBase {
+public class PowerUpShooter extends CommandBase {
     
-    public TurnOffShooter() {
+    public PowerUpShooter() {
         requires(shooter);
     }
 
@@ -20,7 +20,7 @@ public class TurnOffShooter extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.stop();
+        shooter.increasePower();
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -1,15 +1,18 @@
-
-package edu.wpi.first.wpilibj.templates.commands;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.teamupnext.robot.commands;
 
 /**
  *
- * @author bradmiller
+ * @author jousley
  */
-public class ExampleCommand extends CommandBase {
+public class PowerDownShooter extends CommandBase {
+    
+    public PowerDownShooter() {
 
-    public ExampleCommand() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(shooter);
     }
 
     // Called just before this Command runs the first time
@@ -18,11 +21,13 @@ public class ExampleCommand extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        System.out.println("Decrease Power");
+        shooter.decreasePower();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
