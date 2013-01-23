@@ -1,11 +1,10 @@
 
 package com.teamupnext.robot;
 
-import com.teamupnext.robot.commands.TurnOffShooter;
-import com.teamupnext.robot.commands.PushFeeder;
+import com.teamupnext.robot.commands.Feed;
 import com.teamupnext.robot.commands.PowerDownShooter;
-import com.teamupnext.robot.commands.PullFeeder;
 import com.teamupnext.robot.commands.PowerUpShooter;
+import com.teamupnext.robot.commands.TurnOffShooter;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
 ;
@@ -21,12 +20,12 @@ public class OI {
     private JoystickButton decreaseShooterPower;
     private JoystickButton stopShooter;
     
-    private JoystickButton pushFeeder;
-    private JoystickButton pullFeeder;
+    private JoystickButton feed;
     
     public OI()
     {
         joystick = new Joystick(RobotMap.JOYSTICK_PORT);
+        
         
         //shooter 
         increaseShooterPower = new JoystickButton(joystick, RobotMap.RIGHT_BUMPER);
@@ -40,11 +39,9 @@ public class OI {
         
         
         //feeder
-        pushFeeder = new JoystickButton(joystick, RobotMap.A_BUTTON);
-        pullFeeder = new JoystickButton(joystick, RobotMap.B_BUTTON);
+        feed = new JoystickButton(joystick, RobotMap.A_BUTTON);
         
-        pushFeeder.whenPressed(new PushFeeder());
-        pullFeeder.whenPressed(new PullFeeder());   
+        feed.whenPressed(new Feed());
         
         
         

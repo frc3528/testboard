@@ -24,8 +24,14 @@ public class RobotMap {
     public static final int JOYSTICK_BUTTON_6 = 6;
     //End Joystick Constants
     
+    
+    //Shooter Constants
     public static final int ShooterChannel = 7;
+    //End Shooter Constants
     
-    public static final int FEEDER_TIMEOUT = 3;
     
+    //Begin Feeder Constants
+    public static final int FEEDER_PUSH_TIMEOUT = 3;
+    public static final int FEEDER_PULL_TIMEOUT = 3;
+    //End Feeder Constants
 }

@@ -20,7 +20,7 @@ public class PushFeeder extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        setTimeout(RobotMap.FEEDER_TIMEOUT);
+        setTimeout(RobotMap.FEEDER_PUSH_TIMEOUT);
     }
 
     // Called repeatedly when this Command is scheduled to run
