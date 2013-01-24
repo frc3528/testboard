@@ -4,7 +4,6 @@
  */
 package com.teamupnext.robot.subsystems;
 
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStationLCD;
 import edu.wpi.first.wpilibj.DriverStationLCD.Line;
 import edu.wpi.first.wpilibj.Talon;
@@ -26,11 +25,10 @@ public class Shooter extends Subsystem {
     public Shooter() {
         super();
         talon = new Talon(RobotMap.ShooterChannel);
+        //talon.setSafetyEnabled(true);
         lcd = DriverStationLCD.getInstance();
         
         printLCD("STOPPED");
-
-
     }
 
     public void initDefaultCommand() {
@@ -39,6 +37,7 @@ public class Shooter extends Subsystem {
     }
 
     public void increasePower() {
+        //double power = talon.get();
         if (power < 1.0) {
             power += .1;
             power = roundstrip(power);
@@ -50,6 +49,7 @@ public class Shooter extends Subsystem {
     }
 
     public void decreasePower() {
+        //double power = talon.get();
         if (power > -1.0) {
             power -= .1;
             power = roundstrip(power);

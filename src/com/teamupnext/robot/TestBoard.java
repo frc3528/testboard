@@ -8,12 +8,13 @@
 package com.teamupnext.robot;
 
 
+import com.teamupnext.robot.commands.CommandBase;
+import com.teamupnext.robot.commands.ExampleCommand;
+import com.teamupnext.robot.commands.TurnOffShooter;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import com.teamupnext.robot.commands.CommandBase;
-import com.teamupnext.robot.commands.ExampleCommand;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -71,4 +72,15 @@ public class TestBoard extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    
+    public void disabledInit() {
+        new TurnOffShooter().start();
+        //System.out.println("disabled init");
+    }
+    
+    public void disabledPeriodic() {
+        //System.out.println("disabled periodic");        
+    }
+    
 }

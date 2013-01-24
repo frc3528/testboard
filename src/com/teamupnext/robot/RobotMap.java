@@ -34,4 +34,8 @@ public class RobotMap {
     public static final int FEEDER_PUSH_TIMEOUT = 3;
     public static final int FEEDER_PULL_TIMEOUT = 3;
     //End Feeder Constants
+    
+    //testbox constants
+    public static final int TEST_RELAY_CHANNEL = 1;
+    //end testbox constants
 }

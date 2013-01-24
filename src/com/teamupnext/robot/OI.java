@@ -4,6 +4,7 @@ package com.teamupnext.robot;
 import com.teamupnext.robot.commands.Feed;
 import com.teamupnext.robot.commands.PowerDownShooter;
 import com.teamupnext.robot.commands.PowerUpShooter;
+import com.teamupnext.robot.commands.TestRelayForward;
 import com.teamupnext.robot.commands.TurnOffShooter;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
@@ -21,6 +22,7 @@ public class OI {
     private JoystickButton stopShooter;
     
     private JoystickButton feed;
+    private JoystickButton testRelayForward;
     
     public OI()
     {
@@ -40,10 +42,15 @@ public class OI {
         
         //feeder
         feed = new JoystickButton(joystick, RobotMap.A_BUTTON);
-        
         feed.whenPressed(new Feed());
         
         
+        //test relay
+        testRelayForward = new JoystickButton(joystick, RobotMap.Y_BUTTON);
+        testRelayForward.whenPressed(new TestRelayForward());
+        
+        
+        System.out.println("===========> made it 1");
         
     }
     

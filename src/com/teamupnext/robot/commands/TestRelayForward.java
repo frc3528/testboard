@@ -8,10 +8,11 @@ package com.teamupnext.robot.commands;
  *
  * @author jousley
  */
-public class PowerUpShooter extends CommandBase {
+public class TestRelayForward extends CommandBase {
     
-    public PowerUpShooter() {
-        requires(shooter);
+    public TestRelayForward() {
+        
+        requires(testbox);
     }
 
     // Called just before this Command runs the first time
@@ -20,22 +21,21 @@ public class PowerUpShooter extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.increasePower();
+        testbox.testRelayForward();
+        
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
-        //System.out.println("... power up end ...");
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        //System.out.println("...powerup shooter interrupted...");
     }
 }

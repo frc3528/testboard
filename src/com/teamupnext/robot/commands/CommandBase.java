@@ -1,10 +1,10 @@
 package com.teamupnext.robot.commands;
 
-import com.teamupnext.robot.subsystems.Shooter;
-import com.teamupnext.robot.subsystems.Feeder;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import com.teamupnext.robot.OI;
+import com.teamupnext.robot.subsystems.Feeder;
+import com.teamupnext.robot.subsystems.Shooter;
+import com.teamupnext.robot.subsystems.TestBox;
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -19,6 +19,7 @@ public abstract class CommandBase extends Command {
     //public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static Shooter shooter = new Shooter();
     public static Feeder feeder = new Feeder();
+    public static TestBox testbox = new TestBox();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
