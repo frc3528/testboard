@@ -24,18 +24,25 @@ public class RobotMap {
     public static final int JOYSTICK_BUTTON_6 = 6;
     //End Joystick Constants
     
+    //Compressor Constants
+    public static final int PRESSURE_SWITCH_DIO_CHANNEL = 1;
+    public static final int COMPRESSOR_RELAY_CHANNEL = 1;
+    //End Compressor Constants
     
     //Shooter Constants
-    public static final int ShooterChannel = 7;
+    public static final int SHOOTER_CHANNEL = 7;
+    public static final int SHOOTING_MOTOR_CAN_NUMBER = 6;
     //End Shooter Constants
     
     
     //Begin Feeder Constants
-    public static final int FEEDER_PUSH_TIMEOUT = 3;
-    public static final int FEEDER_PULL_TIMEOUT = 3;
+    public static final double FEEDER_PUSH_TIMEOUT = .25;
+    public static final double FEEDER_PULL_TIMEOUT = .25;
+    public static final int FEEDER_PUSH_SOLENOID_CHANNEL = 3;
+    public static final int FEEDER_PULL_SOLENOID_CHANNEL = 4;
     //End Feeder Constants
     
     //testbox constants
-    public static final int TEST_RELAY_CHANNEL = 1;
+    public static final int TEST_RELAY_CHANNEL = 8;
     //end testbox constants
 }

@@ -5,6 +5,7 @@
 package com.teamupnext.robot.commands;
 
 import com.teamupnext.robot.RobotMap;
+import com.teamupnext.robot.commands.CommandBase;
 
 /**
  *
@@ -25,7 +26,6 @@ public class PushFeeder extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        System.out.println("feeder pushed");
         feeder.push();
     }
 

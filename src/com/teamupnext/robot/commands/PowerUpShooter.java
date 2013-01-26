@@ -4,6 +4,8 @@
  */
 package com.teamupnext.robot.commands;
 
+import edu.wpi.first.wpilibj.can.CANTimeoutException;
+
 /**
  *
  * @author jousley
@@ -20,7 +22,11 @@ public class PowerUpShooter extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        shooter.increasePower();
+        try {
+            shooter.increasePower();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()

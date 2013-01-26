@@ -9,9 +9,10 @@ package com.teamupnext.robot;
 
 
 import com.teamupnext.robot.commands.CommandBase;
-import com.teamupnext.robot.commands.ExampleCommand;
+import com.teamupnext.robot.commands.Listener;
 import com.teamupnext.robot.commands.TurnOffShooter;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.can.CANTimeoutException;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -25,7 +26,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class TestBoard extends IterativeRobot {
 
-    Command autonomousCommand;
+   // private Listener listener;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -33,15 +34,18 @@ public class TestBoard extends IterativeRobot {
      */
     public void robotInit() {
         // instantiate the command used for the autonomous period
-        autonomousCommand = new ExampleCommand();
-
-        // Initialize all subsystems
-        CommandBase.init();
+        try {
+            // Initialize all subsystems
+            CommandBase.init();
+        } catch (CANTimeoutException ex) {
+            ex.printStackTrace();
+        }
+        
+        //listener = new Listener();
     }
 
     public void autonomousInit() {
-        // schedule the autonomous command (example)
-        autonomousCommand.start();
+        //autonomouseCommand.start();
     }
 
     /**
@@ -56,7 +60,7 @@ public class TestBoard extends IterativeRobot {
         // teleop starts running. If you want the autonomous to 
         // continue until interrupted by another command, remove
         // this line or comment it out.
-        autonomousCommand.cancel();
+        //autonomousCommand.cancel();
     }
 
     /**
@@ -64,6 +68,8 @@ public class TestBoard extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        //listener.start();
     }
     
     /**

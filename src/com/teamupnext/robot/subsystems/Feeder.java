@@ -4,6 +4,7 @@
  */
 package com.teamupnext.robot.subsystems;
 
+import com.teamupnext.robot.RobotMap;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -20,16 +21,18 @@ public class Feeder extends Subsystem {
    private Solenoid feederPull;
    
    public Feeder() {
-       feederPush = new Solenoid(1);
-       feederPull = new Solenoid(2);
+       feederPush = new Solenoid(RobotMap.FEEDER_PUSH_SOLENOID_CHANNEL);
+       feederPull = new Solenoid(RobotMap.FEEDER_PULL_SOLENOID_CHANNEL);
    }
    
    public void push() {
+       feederPull.set(false);
        feederPush.set(true);
    }
    
    
    public void pull() {
+       feederPush.set(false);
        feederPull.set(true);
    }
    

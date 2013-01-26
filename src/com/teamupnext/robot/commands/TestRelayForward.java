@@ -4,6 +4,8 @@
  */
 package com.teamupnext.robot.commands;
 
+import edu.wpi.first.wpilibj.command.Subsystem;
+
 /**
  *
  * @author jousley
@@ -21,7 +23,7 @@ public class TestRelayForward extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        testbox.testRelayForward();
+        //testbox.testRelayForward();
         System.out.println("--------> relay test");
         
     }
