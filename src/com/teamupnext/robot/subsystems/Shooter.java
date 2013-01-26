@@ -9,6 +9,8 @@ import edu.wpi.first.wpilibj.DriverStationLCD.Line;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.teamupnext.robot.RobotMap;
+import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.SpeedController;
 
 /**
  *
@@ -18,13 +20,13 @@ public class Shooter extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
-    private Talon talon;
+    private SpeedController shootingMotor;
     private DriverStationLCD lcd;
     private double power = 0;
 
     public Shooter() {
         super();
-        talon = new Talon(RobotMap.ShooterChannel);
+        shootingMotor = new Jaguar(RobotMap.ShooterChannel);
         //talon.setSafetyEnabled(true);
         lcd = DriverStationLCD.getInstance();
         
@@ -45,7 +47,7 @@ public class Shooter extends Subsystem {
 
         System.out.println("Power set to " + power);
         printLCD("" + power);
-        talon.set(power);
+        shootingMotor.set(power);
     }
 
     public void decreasePower() {
@@ -57,14 +59,14 @@ public class Shooter extends Subsystem {
 
         System.out.println("Power set to " + power);
         printLCD("" + power);
-        talon.set(power);
+        shootingMotor.set(power);
     }
 
     public void stop() {
         power = 0;
         System.out.println("Power set to " + power);
         printLCD("STOPPED");
-        talon.set(power);
+        shootingMotor.set(power);
     }
     
     private void printLCD(String s) {

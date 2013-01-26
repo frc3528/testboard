@@ -22,11 +22,13 @@ public class TestBox extends Subsystem {
     }
     
     public void testRelayForward() {
-        spike.setDirection(Relay.Direction.kForward);
+        //spike.setDirection(Relay.Direction.kForward);
+        spike.set(Relay.Value.kForward);
     }
     
     public void testRrelayReverse() {
-        spike.setDirection(Relay.Direction.kReverse);
+        //spike.setDirection(Relay.Direction.kReverse);
+        spike.set(Relay.Value.kReverse);
     }
     
     
